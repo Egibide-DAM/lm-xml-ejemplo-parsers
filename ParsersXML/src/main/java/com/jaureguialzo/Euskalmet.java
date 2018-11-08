@@ -1,3 +1,5 @@
+package com.jaureguialzo;
+
 import okhttp3.*;
 
 import java.io.IOException;
