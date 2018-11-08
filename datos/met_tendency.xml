@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<weatherTendencies>
+    <forecastEndDate>14/11/2018</forecastEndDate>
+    <doneDate><![CDATA[08/11/2018 [00:00:00]]]></doneDate>
+    <tendecyDay day='1' date='08/11/2018'>
+        <windIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/38.gif</symbolImage>
+            <descriptions>
+                <es>Viento moderado: viento con velocidad media entre 20 y 40 km/h</es>
+                <eu>Haize bizia: haizearen batez besteko abiadura 20 eta 40 km/h tartekoa denean</eu>
+            </descriptions>
+        </windIcon>
+        <weatherIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/03.gif</symbolImage>
+            <descriptions>
+                <es>Nuboso: entre 4/8 y 5/8 de cielo cubierto</es>
+                <eu>Hodeitsu: zeruaren 4/8etik 5/8era estalita</eu>
+            </descriptions>
+        </weatherIcon>
+        <tempIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/25.gif</symbolImage>
+            <descriptions>
+                <es>Temperaturas sin cambios: variación nula o a lo sumo de un grado de la temperatura</es>
+                <eu>Tenperatura egonkorra: tenperatura aldaketarik ez edo gehienez gradu bateko aldaketa ematen denean
+                </eu>
+            </descriptions>
+        </tempIcon>
+    </tendecyDay>
+    <tendecyDay day='2' date='09/11/2018'>
+        <windIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/32.gif</symbolImage>
+            <descriptions>
+                <es>Viento moderado: viento con velocidad media entre 20 y 40 km/h</es>
+                <eu>Haize bizia: haizearen batez besteko abiadura 20 eta 40 km/h tartekoa denean</eu>
+            </descriptions>
+        </windIcon>
+        <weatherIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/02.gif</symbolImage>
+            <descriptions>
+                <es>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</es>
+                <eu>Partez hodeitua: zeruaren 2/8etik 4/8era estalita</eu>
+            </descriptions>
+        </weatherIcon>
+        <tempIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/25.gif</symbolImage>
+            <descriptions>
+                <es>Temperaturas sin cambios: variación nula o a lo sumo de un grado de la temperatura</es>
+                <eu>Tenperatura egonkorra: tenperatura aldaketarik ez edo gehienez gradu bateko aldaketa ematen denean
+                </eu>
+            </descriptions>
+        </tempIcon>
+    </tendecyDay>
+    <tendecyDay day='3' date='10/11/2018'>
+        <windIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/52.gif</symbolImage>
+            <descriptions>
+                <es>Viento variable: viento muy flojo y de dirección muy cambiante</es>
+                <eu>Haize aldakorra: haize oso ahula eta norabide aldakorrekoa</eu>
+            </descriptions>
+        </windIcon>
+        <weatherIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/10.gif</symbolImage>
+            <descriptions>
+                <es>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h
+                </es>
+                <eu>Zaparrada txikiak: prezipitazio zakarra eta laburra, 15 mm/h-tik behera</eu>
+            </descriptions>
+        </weatherIcon>
+        <tempIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/26.gif</symbolImage>
+            <descriptions>
+                <es>Temperaturas en ascenso: ascenso térmico entre 1 y 4 ºC</es>
+                <eu>Tenperaturaren igoera: tenperatura 1 eta 4 ºC tartean igotzen denean</eu>
+            </descriptions>
+        </tempIcon>
+    </tendecyDay>
+    <tendecyDay day='4' date='11/11/2018'>
+        <windIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/38.gif</symbolImage>
+            <descriptions>
+                <es>Viento moderado: viento con velocidad media entre 20 y 40 km/h</es>
+                <eu>Haize bizia: haizearen batez besteko abiadura 20 eta 40 km/h tartekoa denean</eu>
+            </descriptions>
+        </windIcon>
+        <weatherIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/10.gif</symbolImage>
+            <descriptions>
+                <es>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h
+                </es>
+                <eu>Zaparrada txikiak: prezipitazio zakarra eta laburra, 15 mm/h-tik behera</eu>
+            </descriptions>
+        </weatherIcon>
+        <tempIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/25.gif</symbolImage>
+            <descriptions>
+                <es>Temperaturas sin cambios: variación nula o a lo sumo de un grado de la temperatura</es>
+                <eu>Tenperatura egonkorra: tenperatura aldaketarik ez edo gehienez gradu bateko aldaketa ematen denean
+                </eu>
+            </descriptions>
+        </tempIcon>
+    </tendecyDay>
+    <tendecyDay day='5' date='12/11/2018'>
+        <windIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/52.gif</symbolImage>
+            <descriptions>
+                <es>Viento variable: viento muy flojo y de dirección muy cambiante</es>
+                <eu>Haize aldakorra: haize oso ahula eta norabide aldakorrekoa</eu>
+            </descriptions>
+        </windIcon>
+        <weatherIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/12.gif</symbolImage>
+            <descriptions>
+                <es>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</es>
+                <eu>Euri txikia: ur likidozko prezipitazioa, 15 mm/h-tik behera</eu>
+            </descriptions>
+        </weatherIcon>
+        <tempIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/23.gif</symbolImage>
+            <descriptions>
+                <es>Temperaturas en descenso: descenso térmico entre 1 y 4 ºC</es>
+                <eu>Tenperaturaren jaitsiera: tenperatura 1 eta 4 ºC tartean jaisten denean</eu>
+            </descriptions>
+        </tempIcon>
+    </tendecyDay>
+    <tendecyDay day='6' date='13/11/2018'>
+        <windIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/40.gif</symbolImage>
+            <descriptions>
+                <es>Viento flojo: viento con velocidad media inferior a 20 km/h</es>
+                <eu>Haize ahula: haizearen batez besteko abiadura 20 km/h baino baxuagoa denean</eu>
+            </descriptions>
+        </windIcon>
+        <weatherIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/02.gif</symbolImage>
+            <descriptions>
+                <es>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</es>
+                <eu>Partez hodeitua: zeruaren 2/8etik 4/8era estalita</eu>
+            </descriptions>
+        </weatherIcon>
+        <tempIcon>
+            <symbolImage>/contenidos/recurso_tecnico/tdtrtc/es_rtc/images/25.gif</symbolImage>
+            <descriptions>
+                <es>Temperaturas sin cambios: variación nula o a lo sumo de un grado de la temperatura</es>
+                <eu>Tenperatura egonkorra: tenperatura aldaketarik ez edo gehienez gradu bateko aldaketa ematen denean
+                </eu>
+            </descriptions>
+        </tempIcon>
+    </tendecyDay>
+    <forecastBeginDate>08/11/2018</forecastBeginDate>
+    <periodDateText><![CDATA[jueves 08 de noviembre de 2018]]></periodDateText>
+</weatherTendencies>

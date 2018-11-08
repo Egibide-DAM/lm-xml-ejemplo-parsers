@@ -1,0 +1,28 @@
+<!ELEMENT weatherTendencies (forecastEndDate,doneDate,tendecyDay+,forecastBeginDate,periodDateText)>
+
+<!ELEMENT forecastEndDate (#PCDATA)>
+
+<!ELEMENT doneDate (#PCDATA)>
+
+<!ELEMENT tendecyDay (windIcon,weatherIcon,tempIcon)>
+<!ATTLIST tendecyDay
+        date CDATA #REQUIRED
+        day  #REQUIRED>
+
+<!ELEMENT forecastBeginDate (#PCDATA)>
+
+<!ELEMENT periodDateText (#PCDATA)>
+
+<!ELEMENT windIcon (symbolImage,descriptions)>
+
+<!ELEMENT weatherIcon (symbolImage,descriptions)>
+
+<!ELEMENT tempIcon (symbolImage,descriptions)>
+
+<!ELEMENT symbolImage (#PCDATA)>
+
+<!ELEMENT descriptions (es,eu)>
+
+<!ELEMENT es (#PCDATA)>
+
+<!ELEMENT eu (#PCDATA)>

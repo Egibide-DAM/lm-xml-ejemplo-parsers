@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="weatherTendencies">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="forecastEndDate"/>
+                <xs:element ref="doneDate"/>
+                <xs:element maxOccurs="unbounded" ref="tendecyDay"/>
+                <xs:element ref="forecastBeginDate"/>
+                <xs:element ref="periodDateText"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="forecastEndDate" type="xs:string"/>
+    <xs:element name="doneDate" type="xs:string"/>
+    <xs:element name="tendecyDay">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="windIcon"/>
+                <xs:element ref="weatherIcon"/>
+                <xs:element ref="tempIcon"/>
+            </xs:sequence>
+            <xs:attribute name="date" use="required"/>
+            <xs:attribute name="day" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="windIcon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="symbolImage"/>
+                <xs:element ref="descriptions"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="weatherIcon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="symbolImage"/>
+                <xs:element ref="descriptions"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="tempIcon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="symbolImage"/>
+                <xs:element ref="descriptions"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="forecastBeginDate" type="xs:string"/>
+    <xs:element name="periodDateText" type="xs:string"/>
+    <xs:element name="symbolImage" type="xs:string"/>
+    <xs:element name="descriptions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="es"/>
+                <xs:element ref="eu"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="es" type="xs:string"/>
+    <xs:element name="eu" type="xs:string"/>
+</xs:schema>
