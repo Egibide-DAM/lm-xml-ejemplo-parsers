@@ -1,4 +1,4 @@
-package com.jaureguialzo;
+package com.jaureguialzo.euskalmet;
 
 public class Tendencia {
 

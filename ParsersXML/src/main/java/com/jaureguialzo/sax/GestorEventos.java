@@ -1,5 +1,7 @@
-package com.jaureguialzo;
+package com.jaureguialzo.sax;
 
+import com.jaureguialzo.euskalmet.Tendencia;
+import com.jaureguialzo.euskalmet.TipoTendencia;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;

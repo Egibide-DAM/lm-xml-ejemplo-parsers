@@ -1,4 +1,4 @@
-package com.jaureguialzo;
+package com.jaureguialzo.euskalmet;
 
 import okhttp3.*;
 
@@ -38,6 +38,7 @@ public class Euskalmet {
     }
 
     public static void main(String[] args) {
+        System.out.println("--- Euskalmet XML, tendencia para 6 días ---\n");
         System.out.println(tendenciaSeisDias());
     }
 

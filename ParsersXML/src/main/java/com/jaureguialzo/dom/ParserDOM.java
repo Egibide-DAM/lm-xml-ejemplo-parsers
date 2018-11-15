@@ -1,4 +1,4 @@
-package com.jaureguialzo;
+package com.jaureguialzo.dom;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +14,8 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import com.jaureguialzo.euskalmet.Euskalmet;
+import com.jaureguialzo.euskalmet.Tendencia;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -26,6 +28,8 @@ public class ParserDOM {
     // REF: Tutorial: https://www.journaldev.com/898/read-xml-file-java-dom-parser
 
     public static void main(String[] args) {
+
+        System.out.println("--- DOM (lectura) ---\n");
 
         String filePath = "employee.xml";
         File xmlFile = new File(filePath);
@@ -71,21 +75,26 @@ public class ParserDOM {
 
             temp.setFecha(element.getAttribute("date"));
 
-            temp.setTemperatura(getXPathValue("tempIcon", element));
-            temp.setTiempo(getXPathValue("weatherIcon", element));
-            temp.setViento(getXPathValue("windIcon", element));
+            temp.setTemperatura(obtenerValor("es", obtenerSubelemento("tempIcon", element)));
+            temp.setTiempo(obtenerValor("es", obtenerSubelemento("weatherIcon", element)));
+            temp.setViento(obtenerValorXPath("windIcon", element));
+
         }
 
         return temp;
     }
 
-    private static String getTagValue(String tag, Element element) {
+    private static String obtenerValor(String tag, Element element) {
         NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
         Node node = (Node) nodeList.item(0);
         return node.getNodeValue();
     }
 
-    private static String getXPathValue(String tag, Element element) {
+    private static Element obtenerSubelemento(String tag, Element element) {
+        return (Element) element.getElementsByTagName(tag).item(0);
+    }
+
+    private static String obtenerValorXPath(String tag, Element element) {
 
         // REF: Obtener un valor XPath: https://stackoverflow.com/a/6539024
 
@@ -102,6 +111,6 @@ public class ParserDOM {
 
         return null;
     }
-    
+
 }
 

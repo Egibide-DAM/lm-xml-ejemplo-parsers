@@ -1,5 +1,7 @@
-package com.jaureguialzo;
+package com.jaureguialzo.sax;
 
+import com.jaureguialzo.euskalmet.Euskalmet;
+import com.jaureguialzo.euskalmet.Tendencia;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -15,6 +17,8 @@ public class ParserSAX {
     // REF: Tutorial: https://www.journaldev.com/1198/java-sax-parser-example
 
     public static void main(String[] args) {
+
+        System.out.println("--- SAX (lectura) ---\n");
 
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 

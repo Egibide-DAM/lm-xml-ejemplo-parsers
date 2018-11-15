@@ -1,4 +1,4 @@
-package com.jaureguialzo;
+package com.jaureguialzo.euskalmet;
 
 public enum TipoTendencia {
     VIENTO, TEMPERATURA, TIEMPO
