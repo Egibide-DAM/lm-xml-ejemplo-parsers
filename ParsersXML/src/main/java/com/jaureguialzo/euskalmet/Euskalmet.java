@@ -5,6 +5,9 @@ import okhttp3.*;
 import java.io.IOException;
 import java.util.Arrays;
 
+/**
+ * Leer un feed XML desde Open Data Euskadi usando la librería OkHttp
+ */
 public class Euskalmet {
 
     // REF: Euskalmet - Open Data Euskadi: http://opendata.euskadi.eus/catalogo/-/prediccion-meteorologica-de-2018/

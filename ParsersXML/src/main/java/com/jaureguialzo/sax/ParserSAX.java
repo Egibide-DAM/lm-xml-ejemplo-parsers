@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 
+/**
+ * Ejemplo de lectura de datos XML usando un parser tipo SAX
+ */
 public class ParserSAX {
 
     // REF: Tutorial: https://www.journaldev.com/1198/java-sax-parser-example

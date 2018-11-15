@@ -9,6 +9,9 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Manejador de los eventos del parser SAX
+ */
 public class GestorEventos extends DefaultHandler {
 
     private List<Tendencia> tendencias = new ArrayList<>();
