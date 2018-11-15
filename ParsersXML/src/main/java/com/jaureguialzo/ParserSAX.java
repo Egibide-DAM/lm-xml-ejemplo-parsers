@@ -22,7 +22,9 @@ public class ParserSAX {
             SAXParser saxParser = saxParserFactory.newSAXParser();
 
             GestorEventos handler = new GestorEventos();
-            saxParser.parse(new InputSource(new StringReader(Euskalmet.tendenciaSeisDias())), handler);
+            InputSource datos = new InputSource(new StringReader(Euskalmet.tendenciaSeisDias()));
+
+            saxParser.parse(datos, handler);
 
             List<Tendencia> tendencias = handler.getTendencias();
 
