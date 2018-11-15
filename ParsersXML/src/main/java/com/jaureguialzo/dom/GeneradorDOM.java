@@ -21,6 +21,8 @@ import java.util.List;
 
 public class GeneradorDOM {
 
+    // REF: Ejemplo original (obsoleto): http://www.java-samples.com/showtutorial.php?tutorialid=152
+
     List<Libro> myData;
     Document dom;
 
