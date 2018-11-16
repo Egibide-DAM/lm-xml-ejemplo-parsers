@@ -11,11 +11,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.beans.XMLEncoder;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,113 +19,110 @@ public class GeneradorDOM {
 
     // REF: Ejemplo original (obsoleto): http://www.java-samples.com/showtutorial.php?tutorialid=152
 
-    List<Libro> myData;
-    Document dom;
+    private List<Libro> libros;
+    private Document dom;
 
     public GeneradorDOM() {
-        //create a list to hold the data
-        myData = new ArrayList<>();
 
-        //initialize the list
-        loadData();
+        // Lista para almacenar los objetos
+        libros = new ArrayList<>();
 
-        //Get a DOM object
-        createDocument();
+        // Rellenar la lista con datos de prueba
+        cargarDatos();
+
+        // Construir un documento DOM vacío
+        crearDocumento();
     }
 
-    public void runExample() {
-        System.out.println("Started .. ");
-        createDOMTree();
-        printToFile();
-        System.out.println("Generated file successfully.");
+    public void run() {
+        System.out.println("Iniciando...");
+        crearArbolDOM();
+        exportarFichero();
+        System.out.println("Fichero generado.");
     }
 
-    /**
-     * Add a list of books to the list In a production system you might populate
-     * the list from a DB
-     */
-    private void loadData() {
-        myData.add(new Libro("Head First Java", "Kathy Sierra .. etc", "Java 1.5"));
-        myData.add(new Libro("Head First Design Patterns", "Kathy Sierra .. etc", "Java Architect"));
+    private void cargarDatos() {
+        libros.add(new Libro("Head First Java", "Kathy Sierra .. etc", "programacion"));
+        libros.add(new Libro("Head First Design Patterns", "Kathy Sierra .. etc", "ingenieria_software"));
     }
 
-    /**
-     * Using JAXP in implementation independent manner create a document object
-     * using which we create a xml tree in memory
-     */
-    private void createDocument() {
+    private void crearDocumento() {
 
-        //get an instance of factory
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        try {
-            //get an instance of builder
-            DocumentBuilder db = dbf.newDocumentBuilder();
 
-            //create an instance of DOM
+        try {
+            DocumentBuilder db = dbf.newDocumentBuilder();
             dom = db.newDocument();
 
-        } catch (ParserConfigurationException pce) {
-            //dump it
-            System.out.println("Error while trying to instantiate DocumentBuilder " + pce);
-            System.exit(1);
+            // REF: No hay esquema o DTD: https://stackoverflow.com/a/8438236
+            dom.setXmlStandalone(true);
+
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
         }
 
     }
 
-    /**
-     * The real workhorse which creates the XML structure
-     */
-    private void createDOMTree() {
+    private void crearArbolDOM() {
 
-        Element rootEle = dom.createElement("Libros");
-        dom.appendChild(rootEle);
+        Element raiz = dom.createElement("libros");
+        dom.appendChild(raiz);
 
-        for (Libro l : myData) {
-            Element bookEle = createBookElement(l);
-            rootEle.appendChild(bookEle);
+        for (Libro libro : libros) {
+            Element elemento = crearElementoLibro(libro);
+            raiz.appendChild(elemento);
         }
 
     }
 
-    /**
-     * Helper method which creates a XML element <Book>
-     *
-     * @param b The book for which we need to create an xml representation
-     * @return XML element snippet representing a book
-     */
-    private Element createBookElement(Libro b) {
+    private Element crearElementoLibro(Libro libro) {
 
-        Element bookEle = dom.createElement("libro");
-        bookEle.setAttribute("tema", b.getTema());
+        // <libro tema="">
+        Element elementoLibro = dom.createElement("libro");
+        elementoLibro.setAttribute("tema", libro.getTema());
 
-        //create author element and author text node and attach it to bookElement
-        Element authEle = dom.createElement("autor");
-        Text authText = dom.createTextNode(b.getAutor());
-        authEle.appendChild(authText);
-        bookEle.appendChild(authEle);
+        // <autor>
+        Element elementoAutor = dom.createElement("autor");
 
-        //create title element and title text node and attach it to bookElement
-        Element titleEle = dom.createElement("titulo");
-        Text titleText = dom.createTextNode(b.getTitulo());
-        titleEle.appendChild(titleText);
-        bookEle.appendChild(titleEle);
+        // #PCDATA
+        Text textoAutor = dom.createTextNode(libro.getAutor());
+        elementoAutor.appendChild(textoAutor);
 
-        return bookEle;
+        // </libro>
+        elementoLibro.appendChild(elementoAutor);
+
+        // <titulo>
+        Element elementoTitulo = dom.createElement("titulo");
+
+        // #PCDATA
+        elementoTitulo.appendChild(dom.createTextNode(libro.getTitulo()));
+
+        // </titulo>
+        elementoLibro.appendChild(elementoTitulo);
+
+        // </libro>
+        return elementoLibro;
 
     }
 
-    /**
-     * This method uses Xerces specific classes prints the XML document to file.
-     */
-    private void printToFile() {
+    private void exportarFichero() {
 
         // REF: Serializar XML: https://www.edureka.co/blog/serialization-of-java-objects-to-xml-using-xmlencoder-decoder/
 
         try {
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
+
+            // REF: Indentar la salida: https://stackoverflow.com/a/1264872
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+            transformer.setOutputProperty(OutputKeys.STANDALONE, "yes");
+
             Result output = new StreamResult(new File("../libros.xml"));
             Source input = new DOMSource(dom);
+
             transformer.transform(input, output);
+
         } catch (TransformerException e) {
             e.printStackTrace();
         }
@@ -138,7 +131,7 @@ public class GeneradorDOM {
 
     public static void main(String args[]) {
         System.out.println("--- DOM (escritura) ---\n");
-        new GeneradorDOM().runExample();
+        new GeneradorDOM().run();
     }
 
 }
