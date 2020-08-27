@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ParserDOM" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="com.jaureguialzo.dom.ParserDOM" />
-    <module name="parsers-xml" />
+    <module name="ParsersXML" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.jaureguialzo.sax.*" />

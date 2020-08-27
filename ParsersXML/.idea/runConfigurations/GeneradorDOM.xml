@@ -2,7 +2,7 @@
   <configuration default="false" name="GeneradorDOM" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="ALTERNATIVE_JRE_PATH" value="jdk" />
     <option name="MAIN_CLASS_NAME" value="com.jaureguialzo.dom.GeneradorDOM" />
-    <module name="parsers-xml" />
+    <module name="ParsersXML" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.jaureguialzo.dom.*" />
