@@ -10,20 +10,19 @@ import java.util.Arrays;
  */
 public class Euskalmet {
 
-    // REF: Euskalmet - Open Data Euskadi: http://opendata.euskadi.eus/catalogo/-/prediccion-meteorologica-de-2018/
+    // REF: Euskalmet - Open Data Euskadi: https://opendata.euskadi.eus/catalogo/-/prediccion-meteorologica-de-2018/
 
     public static String tendenciaSeisDias() {
 
         String respuesta = null;
 
-        // REF: Librería para comunicaciones HTTP: http://square.github.io/okhttp/
+        // REF: Librería para comunicaciones HTTP: https://square.github.io/okhttp/
         OkHttpClient client = new OkHttpClient.Builder()
-                .connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS, ConnectionSpec.CLEARTEXT))
                 .addInterceptor(new EncodingInterceptor())
                 .build();
 
         Request request = new Request.Builder()
-                .url("http://opendata.euskadi.eus/contenidos/tendencias/met_tendency/opendata/met_tendency.xml")
+                .url("https://opendata.euskadi.eus/contenidos/tendencias/met_tendency/opendata/met_tendency.xml")
                 .get()
                 .addHeader("cache-control", "no-cache")
                 .build();

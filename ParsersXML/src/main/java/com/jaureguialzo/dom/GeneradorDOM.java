@@ -17,7 +17,7 @@ import java.util.List;
 
 public class GeneradorDOM {
 
-    // REF: Ejemplo original (obsoleto): http://www.java-samples.com/showtutorial.php?tutorialid=152
+    // REF: Ejemplo original (obsoleto): https://www.java-samples.com/showtutorial.php?tutorialid=152
 
     private List<Libro> libros;
     private Document dom;
