@@ -51,7 +51,11 @@ public class Euskalmet {
         public Response intercept(Chain chain) throws IOException {
             Response response = chain.proceed(chain.request());
             MediaType mediaType = MediaType.parse("application/json; charset=iso-8859-1");
-            ResponseBody modifiedBody = ResponseBody.create(mediaType, response.body().bytes());
+
+            ResponseBody modifiedBody = null;
+            if (response.body() != null) {
+                modifiedBody = ResponseBody.create(mediaType, response.body().bytes());
+            }
 
             return response.newBuilder()
                     .body(modifiedBody)
