@@ -3,7 +3,6 @@ package com.jaureguialzo.sax;
 import com.jaureguialzo.euskalmet.Tendencia;
 import com.jaureguialzo.euskalmet.TipoTendencia;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
@@ -14,16 +13,16 @@ import java.util.List;
  */
 public class GestorEventos extends DefaultHandler {
 
-    private List<Tendencia> tendencias = new ArrayList<>();
+    private final List<Tendencia> tendencias = new ArrayList<>();
 
     private Tendencia temp = null;
 
     private TipoTendencia tipo = null;
 
-    private StringBuilder builder = new StringBuilder();
+    private final StringBuilder builder = new StringBuilder();
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
 
         switch (qName) {
             case "tendecyDay":
@@ -45,12 +44,12 @@ public class GestorEventos extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         builder.append(new String(ch, start, length));
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
 
         String texto = builder.toString();
 
