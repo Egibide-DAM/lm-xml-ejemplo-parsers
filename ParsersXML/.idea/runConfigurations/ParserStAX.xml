@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="ParserSAX" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="com.jaureguialzo.sax.ParserSAX" />
+  <configuration default="false" name="ParserStAX" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.jaureguialzo.stax.ParserStAX" />
     <module name="ParsersXML" />
     <extension name="coverage">
       <pattern>
