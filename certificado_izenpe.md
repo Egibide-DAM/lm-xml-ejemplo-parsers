@@ -1,6 +1,6 @@
 ## Importar el certificado de Izenpe para el JDK
 
-1. Descargar el certificado raíz de [Izenpe](https://www.izenpe.eus/web_corporativa/es/descarga-certificados.shtml).
+1. Descargar el certificado raíz (`CA Raiz [2F 78 3D 25 52 18 A7 4A 65 39 71 B5 2C A2 9C 45 15 6F E9 19]`) de [Izenpe](https://www.izenpe.eus/web_corporativa/es/descarga-certificados.shtml).
 
 2. Localizar la ruta del JDK:
 
