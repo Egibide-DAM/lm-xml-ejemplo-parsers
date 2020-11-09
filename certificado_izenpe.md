@@ -4,14 +4,33 @@
 
 2. Localizar la ruta del JDK:
 
+	macOS
+	
 	```
 	export JAVA_HOME=$(/usr/libexec/java_home)
 	```
 
-3. Instalar el certificado en el keystore del JDK:
+	Windows
 
 	```
-	sudo keytool -import -alias certificadoIzenpe -keystore $JAVA_HOME/lib/security/cacerts -file Downloads/RAIZ2007_cert_sha256.crt
+	set JAVA_HOME=C:\Program Files\Java\jdk-11.0.3
+	```
+
+	Modificarlo con la ruta exacta dependiendo de la versión instalada.
+
+
+3. Instalar el certificado en el keystore del JDK:
+
+	macOS
+
+	```
+	sudo keytool -import -alias certificadoIzenpe -keystore $JAVA_HOME/lib/security/cacerts -file RAIZ2007_cert_sha256.crt
+	```
+
+	Windows (en un CMD con permisos de administrador)
+
+	```
+	"%JAVA_HOME%\bin\keytool.exe" -import -alias certificadoIzenpe -keystore "%JAVA_HOME%/lib/security/cacerts" -file RAIZ2007_cert_sha256.crt
 	```
 
 	La contraseña del keystore predeterminado es `changeit`.
